@@ -1,0 +1,18 @@
+// SPDX-License-Identifier: GPL-2.0
+#include "qcom-msm8974-samsung-klte.dts"
+
+/ {
+	model = "Samsung Galaxy S5 China";
+	compatible = "samsung,kltechn", "qcom,msm8974";
+
+	i2c-gpio-led {
+		scl-gpios = <&msmgpio 61 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
+		sda-gpios = <&msmgpio 60 (GPIO_ACTIVE_HIGH | GPIO_OPEN_DRAIN)>;
+	};
+};
+
+&i2c_led_gpioex_pins {
+	mux {
+		pins = "gpio60", "gpio61";
+	};
+};
